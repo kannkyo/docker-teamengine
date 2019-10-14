@@ -18,7 +18,11 @@ docker run -it --rm -p 8080:8080 kannkyo/docker-teamengine
 
 Please open following url in browser.
 
-http://localhost:8080/teamengine/
+- http://localhost:8080/teamengine/
+   : Home page for selecting and running test suites using the web interface
+
+- http://localhost:8080/teamengine/rest/suites
+   : Presents a listing of available test suites that expose a RESTful API, with links to test suite documentation
 
 # LICENSE
 
