@@ -1,6 +1,6 @@
 FROM maven:alpine AS builder
 
-ENV TE_VERSION=5.3.1
+ENV TE_VERSION=5.4
 
 WORKDIR /opt
 RUN apk add --no-cache git \
@@ -11,7 +11,7 @@ RUN apk add --no-cache git \
 
 FROM tomcat:7-jre8-alpine AS app
 
-ENV TE_VERSION=5.3.1 \
+ENV TE_VERSION=5.4 \
     TE_BASE=/te_base \
     CATALINA_BASE=/srv/tomcat/base-1
 ENV CATALINA_OPTS="-server -Xmx1024m -XX:MaxPermSize=128m -DTE_BASE=$TE_BASE -Dderby.system.home=$DERBY_DATA"
