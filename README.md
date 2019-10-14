@@ -10,13 +10,13 @@ https://github.com/opengeospatial/teamengine-docker
 
 # usage
 
-Please execute bellow command.
+Please execute following command.
 
 ```bash
 docker run -it --rm -p 8080:8080 kannkyo/docker-teamengine
 ```
 
-Please open bellow url in browser.
+Please open following url in browser.
 
 http://localhost:8080/teamengine/
 
