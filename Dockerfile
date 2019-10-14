@@ -1,12 +1,12 @@
 FROM maven:alpine AS builder
 
-ENV TEAMENGINE_VERSION=5.3.1
+ENV TE_VERSION=5.3.1
 
 WORKDIR /opt
 RUN apk add --no-cache git \
     && git clone https://github.com/opengeospatial/teamengine.git \
     && cd teamengine \
-    && git checkout $TEAMENGINE_VERSION \
+    && git checkout -b ${TE_VERSION} refs/tags/${TE_VERSION} \
     && mvn package -Dmaven.test.skip
 
 FROM tomcat:7-jre8-alpine AS app
