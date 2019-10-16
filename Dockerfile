@@ -21,6 +21,7 @@ COPY --from=builder /opt/teamengine/teamengine-console/target/teamengine-console
 
 RUN mkdir -p $TE_BASE \
     && unzip teamengine-console-$TE_VERSION-base.zip -d $TE_BASE \
+    && rm teamengine-console-$TE_VERSION-base.zip \
     && mkdir -p $CATALINA_BASE \
     && cd $CATALINA_BASE \
     && cp -r $CATALINA_HOME/conf . \
