@@ -19,7 +19,8 @@ ENV CATALINA_OPTS="-server -Xmx1024m -XX:MaxPermSize=128m -DTE_BASE=$TE_BASE -Dd
 WORKDIR /
 COPY --from=builder /opt/teamengine/teamengine-console/target/teamengine-console-$TE_VERSION-base.zip .
 
-RUN mkdir -p $TE_BASE \
+RUN apk add --no-cache git maven openjdk8 \
+    && mkdir -p $TE_BASE \
     && unzip teamengine-console-$TE_VERSION-base.zip -d $TE_BASE \
     && rm teamengine-console-$TE_VERSION-base.zip \
     && mkdir -p $CATALINA_BASE \
